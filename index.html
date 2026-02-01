@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Yuktu ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8cdda; /* The pink background */
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Keeps the background steady */
+        }
+        
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 85%;
+            
+            /* --- THE SCROLL FIX --- */
+            max-height: 80vh; /* Card won't be taller than 80% of screen */
+            overflow-y: auto; /* Adds scrollbar INSIDE card if text is long */
+            /* --------------------- */
+        }
+
+        img {
+            width: 140px;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #d81b60;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-weight: bold;
+        }
+
+        .yes-btn {
+            background-color: #e91e63;
+            color: white;
+        }
+        
+        .yes-btn:hover {
+            transform: scale(1.1);
+            background-color: #c2185b;
+        }
+
+        .no-btn {
+            background-color: #e0e0e0;
+            color: #333;
+            position: relative;
+        }
+
+        /* Letter Box Style */
+        .letter-box {
+            background-color: #fff0f5;
+            padding: 20px;
+            border: 2px dashed #e91e63;
+            border-radius: 10px;
+            color: #880e4f;
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="slide1">
+        <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" alt="Heart">
+        <h1>I have a question for you...</h1>
+        <button class="yes-btn" onclick="showSlide2()">Tap to see ❤️</button>
+    </div>
+
+    <div class="card hidden" id="slide2">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXNreHdvbGs5eXlyb3F5aHhqbjY0ZnY0b3Z4eW1tN214aW14aW14YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/KxtjPgBHlTm8iMaXRk/giphy.gif" alt="Cute Bear">
+        <h1>Yuktu, will you be my valentine?</h1>
+        <div class="btn-container">
+            <button class="yes-btn" onclick="showSlide3()">Yes</button>
+            <button class="no-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <div class="card hidden" id="slide3">
+        <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Kisses">
+        <h1>Happy Valentine's Day! ❤️</h1>
+        
+        <div class="letter-box">
+            <b>Yuktu My Love,</b><br><br>
+            Being with you has been incredible 🤩, and I’m so grateful for every moment we've shared 💕. From our laughter 😂 to our deep conversations 💬, each experience has brought us closer together 💗.<br><br>
+            I can’t wait to see what the future holds for us 🔮. Here’s to many more years of love ❤️ and adventure!<br><br>
+            <b>I Love You The Most My Mumma, My Baby, My Bacha 💗 And Mhaari Laado ♥️.</b><br><br>
+            Mera Sabse Pyaara Chotusa Ittusa ekdum ittusa sabse jyada cute mera Pyaara bacha 😘.
+        </div>
+    </div>
+
+    <script>
+        function showSlide2() {
+            document.getElementById('slide1').classList.add('hidden');
+            document.getElementById('slide2').classList.remove('hidden');
+        }
+
+        function showSlide3() {
+            document.getElementById('slide2').classList.add('hidden');
+            document.getElementById('slide3').classList.remove('hidden');
+        }
+
+        function moveButton() {
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            var btn = document.getElementById('noBtn');
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
